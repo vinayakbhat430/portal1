@@ -1,0 +1,38 @@
+td {
+  /* border-bottom: 1px solid #ddd; */
+  width:450px;
+  height: 35px;
+  text-align: center;
+  color:darkmagenta;
+  font-weight: bold;
+  
+}
+
+ thead th{
+  /* border-bottom: 1px solid #ddd; */
+  width:450px;
+  text-align: center;
+  background-color:rgb(255, 187, 98);
+  font-weight: bolder;
+  font-family:cursive;
+  color: black;
+  height: 65px;
+}
+.image{
+  height:39.8em; background-size:cover;width:auto ;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position:50% 50%;
+  background-size: 100% 100%;
+  background-color: #e6f5f4;
+}
+.header{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  font-weight: bolder;
+  color: black;
+  width: 100%;
+  padding: 32px;
+}

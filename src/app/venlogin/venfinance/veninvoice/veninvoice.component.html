@@ -1,0 +1,102 @@
+<div class="image">
+  <div class="header">Invoice Details</div>
+  <div class="input-div"><input class="input-search" placeholder="Search By Account Number" [(ngModel)]="enteredSearchText"></div>
+
+  <div class="container">
+      <table border="2px" [cellPadding]="1">
+  <thead>
+    <th>
+        <span>INVOICE DOCUMENT NUMBER</span>
+    </th>
+    <th>
+        <span> FISCAL YEAR</span>
+    </th>
+    <th>
+        <span>COMPANY CODE</span>
+    </th>
+    <th>
+        <span>ENTRY DATE</span>
+    </th>
+    <th>
+        <span>ENTRY TIME</span>
+    </th>
+    <th>
+      <span>CURRENCY</span>
+    </th>
+    <th>
+        <span>GROSS AMOUNT</span>
+    </th>
+    <th>
+        <span>STATUS</span>
+    </th>
+</thead> 
+
+
+<tbody><ng-container *ngFor='let row of veninvoice'>
+    <tr *ngIf="enteredSearchText === '' || row.BELNR[0].includes(enteredSearchText)" (click)="detail(row)">
+        <td>
+                {{row.BELNR}}
+        </td>
+        <td>
+            {{row.GJAHR}}
+        </td> 
+        <td>
+            {{row.BUKRS}}
+        </td> 
+        <td>
+            {{row.BLDAT}}
+        </td> 
+        <td>
+            {{row.CPUTM}}
+        </td> 
+        <td>
+          {{row.WAERS}}
+        </td>
+        <td>
+          <span class="amt">
+            {{row.RMWWR}}
+            </span>
+        </td> 
+      
+        <td>
+            {{row.RBSTAT}}
+        </td>
+     
+    </tr>
+    </ng-container>
+</tbody>
+   
+      </table> 
+      <!-- Modal -->
+
+<div class="modal"  tabindex="-1" role="dialog" [ngStyle]="{'display':displayStyle}">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="tt">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title"></h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" (click)="closePopup()"></button>
+        </div>
+        <div class="modal-body">
+          <div>
+            <p class="pop-title">Document Number : <span class="pop-value">{{docnumber}}</span></p>
+            <p class="pop-title">Year : <span class="pop-value">{{year}}</span></p>
+            <p class="pop-title">Company Code : <span class="pop-value">{{companycode}}</span></p>
+            <p class="pop-title">Entry Date : <span class="pop-value">{{entrydate}}</span></p>
+            <p class="pop-title">Entry Time : <span class="pop-value">{{entrytime}}</span></p>
+            <p class="pop-title">Gross Amount : <span class="pop-value">{{grossamt}}</span></p>
+            <p class="pop-title">Currency : <span class="pop-value">{{currency}}</span></p>
+            <p class="pop-title">Status : <span class="pop-value">{{status}}</span></p>
+          </div>
+          
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" (click)="closePopup()">Close</button>
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>    
+  </div>
+  </div>
+  

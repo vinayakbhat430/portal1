@@ -1,0 +1,67 @@
+<div class="image">
+  <div class="header">Debit Details</div>
+<div class="container">
+    <table border="2px" [cellPadding]="1">
+    <thead>
+        <th>
+            <span>FISCAL YEAR</span>
+          </th>
+          <th>
+            <span>CLEARING DATE</span>
+          </th>
+          <th>
+            <span>UPDATED AMOUNT</span>
+          </th>
+          <th>
+            <span>CURRENCY</span>
+          </th>
+   </thead> 
+
+
+   <tbody>
+       <tr *ngFor='let row of cusdebit'>
+        <td>
+            {{ row.GJAHR}}
+          </td>
+          <td>
+            {{ row.AUGDT}}
+          </td>
+          <td>
+            <span class="amt">{{ row.PSWBT}}</span>
+            
+          </td>
+          <td>
+            {{ row.PSWSL}}
+          </td>
+       </tr>
+   </tbody>
+    </table>
+          
+<!-- Modal -->
+
+<div class="modal"  tabindex="-1" role="dialog" [ngStyle]="{'display':displayStyle}">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="tt">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title"></h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" (click)="closePopup()"></button>
+      </div>
+      <div class="modal-body">
+        <div>
+          <p class="pop-title">Fiscal Year : <span class="pop-value">{{docnumber}}</span></p>
+          <p class="pop-title">Clearing Date : <span class="pop-value">{{docnumber1}}</span></p>
+          <p class="pop-title">Updated Amount : <span class="pop-value">{{docnumber2}}</span></p>
+          <p class="pop-title">Currency : <span class="pop-value">{{docnumber3}}</span></p>
+        </div>
+        
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" (click)="closePopup()">Close</button>
+      </div>
+    </div>
+  </div>
+  </div>
+</div>    
+</div>
+</div>

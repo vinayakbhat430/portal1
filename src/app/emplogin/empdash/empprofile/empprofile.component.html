@@ -1,0 +1,52 @@
+<div>
+  <div class="image">
+      <div class="human">
+        <img
+          src="assets\images\e7e2fc5598942999c07a92222a.gif"
+          height="300em"
+          width="300em"
+          class="man"
+        />
+      </div>
+      <div class="container" *ngFor="let row of empprofile">
+        <h1 class="hello">
+          Hello! <span class="cust-name">{{ row.ENAME }}</span>
+        </h1>
+    
+        <div>
+          <div>
+            <h2>Account Details 👇</h2>
+          <div class="tx">
+            Employee ID: <span class="data">{{ row.PERNR }}</span>
+          </div>
+          <div class="tx">
+            Phone Number: <span class="data">{{ row.TELNR }}</span>
+          </div>
+          <div class="tx">
+            DOB : <span class="data">{{ row.GBDAT }}</span>
+          </div>
+          <div class="tx">
+            Designation : <span class="data">{{ row.PLANS_TXT }}</span>
+          </div>
+          <div class="tx">
+            Practice : <span class="data">{{ row.ORGEH_TXT }}</span>
+          </div>
+          </div>
+    
+          <div class="">
+            <h3>Address :</h3>
+            <div class="tx">
+              Street : <span class="data">{{ row.STRAS }}</span>
+            </div>
+            <div class="tx">
+              City : <span class="data">{{ row.ORT01 }}</span>
+            </div>
+            <div class="tx">
+              Pincode : <span class="data">{{ row.PSTLZ }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+</div>

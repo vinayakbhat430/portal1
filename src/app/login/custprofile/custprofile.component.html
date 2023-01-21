@@ -1,0 +1,44 @@
+<div>
+    <!-- <div class="back-button" (click)="backButton()"><svg class="btn-back" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">! Font Awesome Pro 6.1.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc.<path d="M9.375 233.4l128-128c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25L109.3 224H480c17.69 0 32 14.31 32 32s-14.31 32-32 32H109.3l73.38 73.38c12.5 12.5 12.5 32.75 0 45.25c-12.49 12.49-32.74 12.51-45.25 0l-128-128C-3.125 266.1-3.125 245.9 9.375 233.4z"/></svg></div> -->
+    <div class="image">
+        <div class="human">
+          <img
+            src="assets\images\e7e2fc5598942999c07a92222a.gif"
+            height="300em"
+            width="300em"
+            class="man"
+          />
+        </div>
+        <div class="container" *ngFor="let row of cusprofile">
+          <h1 class="hello">
+            Hello! <span class="cust-name">{{ row.NAME_2 }}</span>
+          </h1>
+      
+          <div>
+            <div>
+              <h2>Account Details 👇</h2>
+            <div class="tx">
+              Customer ID: <span class="data">{{ row.KUNNR }}</span>
+            </div>
+            <div class="tx">
+              Phone Number: <span class="data">{{ row.TELENUM }}</span>
+            </div>
+            </div>
+      
+            <div class="">
+              <h3>Address :</h3>
+              <div class="tx">
+                Street : <span class="data">{{ row.STREET }}</span>
+              </div>
+              <div class="tx">
+                City : <span class="data">{{ row.CITY }}</span>
+              </div>
+              <div class="tx">
+                Pincode : <span class="data">{{ row.PS_CODE }}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+</div>

@@ -1,0 +1,112 @@
+<div class="image">
+<div class="header">Invoice Details</div>
+<div class="input-div"><input class="input-search" placeholder="Search By Account Number" [(ngModel)]="enteredSearchText"></div>
+
+<div class="container">
+    <table border="2px" [cellPadding]="1"> 
+         <thead>
+            
+            <th>
+                <span>CLIENT NUMBER</span>
+            </th>
+            <th>
+                <span>COMPANY CODE</span>
+            </th>
+            <th>
+                <span>CUSTOMER NUMBER</span>
+            </th>
+            <th>
+                <span>ACCOUNT NUMBER</span>
+            </th>
+            <th>
+                <span>BILLING DOCUMENT</span>
+            </th>
+            
+            <th>
+                <span>SALES TAX CODE</span>
+            </th>
+            <th>
+                <span>DELIVERY DATE</span>
+            </th>
+            <th>
+                <span>YEAR</span>
+            </th>
+            
+            <th>
+                <span>AMOUNT</span>
+            </th>
+        </thead> 
+  
+  
+        <tbody>
+            <ng-container *ngFor='let row of cusinv'>
+            <tr *ngIf="enteredSearchText === '' || row.HKONT[0].includes(enteredSearchText)" (click)="detail(row)">
+               
+                <td>
+                    {{row.MANDT}}
+                </td> 
+                <td>
+                    {{row.BUKRS}}
+                </td>
+                <td>
+                    {{+row.KUNNR}}
+                </td>
+                <td>
+                    {{+row.HKONT}}
+                </td>
+                <td>
+                    {{row.BELNR}}
+                </td>
+                
+                <td>
+                    {{row.MWSKZ}}
+                </td>
+                <td>
+                    {{row.BZDAT}}
+                </td>
+                <td>
+                    {{row.GJAHR}}
+                </td>
+                <td><span class="amt">
+                    {{row.DMBTR}}
+                    </span>
+                </td>
+            </tr>
+        </ng-container>
+        </tbody>
+    </table>
+          
+  <!-- Modal -->
+
+<div class="modal"  tabindex="-1" role="dialog" [ngStyle]="{'display':displayStyle}">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="tt">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title"></h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" (click)="closePopup()"></button>
+        </div>
+        <div class="modal-body">
+          <div>
+            <p class="pop-title">Client Number : <span class="pop-value">{{docnumber}}</span></p>
+            <p class="pop-title">COmpany Code : <span class="pop-value">{{docnumber1}}</span></p>
+            <p class="pop-title">Customer Number : <span class="pop-value">{{docnumber2}}</span></p>
+            <p class="pop-title">Account Number : <span class="pop-value">{{docnumber3}}</span></p>
+            <p class="pop-title">Billing Document : <span class="pop-value">{{docnumber4}}</span></p>
+            <p class="pop-title">Sales Tax Code : <span class="pop-value">{{docnumber5}}</span></p>
+            <p class="pop-title">Delivery Date : <span class="pop-value">{{docnumber6}}</span></p>
+            <p class="pop-title">Year : <span class="pop-value">{{docnumber7}}</span></p>
+            <p class="pop-title">Amount : <span class="pop-value">{{docnumber8}}</span></p>
+          </div>
+          
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" (click)="closePopup()">Close</button>
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>    
+  </div>
+  </div>
+  

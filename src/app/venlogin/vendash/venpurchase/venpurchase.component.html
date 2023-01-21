@@ -1,0 +1,123 @@
+<div class="image">
+  <div class="header">Purchase Details</div>
+  <!-- <div class="loader" *ngIf="loading">Loading...</div> -->
+  <div>
+    <div class="input-div">
+      <input
+        class="input-search"
+        placeholder="Search By Order Number"
+        [(ngModel)]="enteredSearchText"
+      />
+    </div>
+
+    <div class="container">
+      <table border="2px" [cellPadding]="1">
+        <thead>
+          <tr>
+            <td>ORDER_NO</td>
+            <td>PURCHASE ORGANIZATION</td>
+            <td>PURCHASE GROUP</td>
+            <td>DOCUMENT CATEGORY</td>
+            <td>DOCUMENT TYPE</td>
+            <td>STATUS</td>
+            <td>CURRENCY</td>
+            <td>CREATED ON</td>
+            <td>VENDOR</td>
+          </tr>
+        </thead>
+        <tbody>
+          <ng-container *ngFor="let row of venpurchase">
+            <tr
+              *ngIf="
+                enteredSearchText === '' ||
+                row.PO_NUMBER[0].includes(enteredSearchText)
+              "
+              (click)="detail(row)"
+            >
+              <td>{{ row.PO_NUMBER }}</td>
+              <td>{{ +row.PURCH_ORG }}</td>
+              <td>{{ row.PUR_GROUP }}</td>
+              <td>{{ row.DOC_CAT }}</td>
+              <td>{{ row.DOC_TYPE }}</td>
+              <td>{{ row.STATUS }}</td>
+              <td>{{ row.CURRENCY }}</td>
+              <td>{{ row.CREATED_ON }}</td>
+              <td>{{ row.VENDOR }}</td>
+            </tr>
+          </ng-container>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Modal -->
+
+    <div
+      class="modal"
+      tabindex="-1"
+      role="dialog"
+      [ngStyle]="{ display: displayStyle }"
+    >
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="tt">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title"></h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+                (click)="closePopup()"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <div>
+                <p class="pop-title">
+                  Order No : <span class="pop-value">{{ docnumber }}</span>
+                </p>
+                <p class="pop-title">
+                  Purchase Organization :
+                  <span class="pop-value">{{ docnumber1 }}</span>
+                </p>
+                <p class="pop-title">
+                  Purchase Group :
+                  <span class="pop-value">{{ docnumber2 }}</span>
+                </p>
+                <p class="pop-title">
+                  Document Category :
+                  <span class="pop-value">{{ docnumber3 }}</span>
+                </p>
+                <p class="pop-title">
+                  Document Type :
+                  <span class="pop-value">{{ docnumber4 }}</span>
+                </p>
+                <p class="pop-title">
+                  Status : <span class="pop-value">{{ docnumber5 }}</span>
+                </p>
+                <p class="pop-title">
+                  Currency : <span class="pop-value">{{ docnumber6 }}</span>
+                </p>
+                <p class="pop-title">
+                  Created On : <span class="pop-value">{{ docnumber7 }}</span>
+                </p>
+                <p class="pop-title">
+                  Vendor : <span class="pop-value">{{ docnumber8 }}</span>
+                </p>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+                (click)="closePopup()"
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

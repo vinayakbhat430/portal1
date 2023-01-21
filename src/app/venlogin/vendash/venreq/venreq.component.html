@@ -1,0 +1,99 @@
+<div class="image">
+  <div class="header">Quotation Details</div>
+  <div class="input-div"><input class="input-search" placeholder="Search By Document Number" [(ngModel)]="enteredSearchText"></div>
+
+  <div class="container">
+      <table border="2px" [cellPadding]="1">
+<thead>
+  <th>
+      <span>VENDOR NAME</span>
+  </th>
+  <th>
+    <span>DOCUMENT NUMBER</span>
+</th>
+<th>
+  <span>VENDOR ACCOUNT NUMBER</span>
+</th>
+<th>
+  <span>COMPANY CODE</span>
+</th>
+<th>
+  <span>ITEM INTERVAL NUMBER</span>
+</th>
+<th>
+  <span>CREATED ON</span>
+</th>
+<th>
+  <span>PROCESSING ORGANIZATION</span>
+</th>
+<th>
+  <span>EXCHANGE RATE</span>
+</th>
+</thead> 
+
+
+<tbody>
+  <ng-container *ngFor='let row of venreq'>
+  <tr *ngIf="enteredSearchText === '' || row.PO_NUMBER[0].includes(enteredSearchText)" (click)="detail(row)">
+      <td>
+        {{row.VEND_NAME}}
+      </td>
+      <td>
+        {{row.PO_NUMBER}}
+      </td>
+      <td>
+        {{row.VENDOR}}
+      </td>
+      <td>
+        {{row.CO_CODE}}
+      </td>
+      <td>
+        {{row.ITEM_INTVL}}
+      </td>
+      <td>
+        {{row.CREATED_ON}}
+      </td>
+      <td>
+        {{row.PURCH_ORG}}
+      </td>
+      <td>
+        <span class="amt">{{row.EXCH_RATE}}</span>
+        
+      </td>
+  </tr>
+  </ng-container>
+</tbody>
+</table>
+<!-- Modal -->
+
+<div class="modal"  tabindex="-1" role="dialog" [ngStyle]="{'display':displayStyle}">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="tt">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title"></h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" (click)="closePopup()"></button>
+      </div>
+      <div class="modal-body">
+        <div>
+          <p class="pop-title">Vendor Name : <span class="pop-value">{{docnumber}}</span></p>
+          <p class="pop-title">Document Number : <span class="pop-value">{{docnumber1}}</span></p>
+          <p class="pop-title">Vendor Account Number : <span class="pop-value">{{docnumber2}}</span></p>
+          <p class="pop-title">Company code : <span class="pop-value">{{docnumber3}}</span></p>
+          <p class="pop-title">Item Interval Number : <span class="pop-value">{{docnumber4}}</span></p>
+          <p class="pop-title">Created On : <span class="pop-value">{{docnumber5}}</span></p>
+          <p class="pop-title">Processing Organization : <span class="pop-value">{{docnumber6}}</span></p>
+          <p class="pop-title">Exchange Rate : <span class="pop-value">{{docnumber7}}</span></p>
+          <!-- <p class="pop-title">Tax Code : <span class="pop-value">{{docnumber8}}</span></p> -->
+        </div>
+        
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" (click)="closePopup()">Close</button>
+      </div>
+    </div>
+  </div>
+  </div>
+</div>    
+</div>
+</div>

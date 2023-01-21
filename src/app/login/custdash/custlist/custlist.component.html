@@ -1,0 +1,107 @@
+<div class="image">
+    <div  class="header">Delivery List</div>
+    <div class="input-div"><input class="input-search" placeholder="Search By Delivery Number" [(ngModel)]="enteredSearchText"></div>
+
+<div class="container">
+    <table border="2px" [cellPadding]="1">
+<thead>
+    <th>
+        <span>CUSTOMER ID</span>
+    </th>
+    <th>
+        <span>CREATED DATE</span>
+    </th>
+    <th>
+        <span>DELIVERY</span>
+    </th>
+    <th>
+        <span>ENTRY TIME</span>
+    </th>
+    <th>
+        <span>Date OF RECORD CREATION</span>
+    </th>
+    <th>
+        <span>SHIPPING POINT</span>
+    </th>
+    <th>
+        <span>DELIVERY TYPE</span>
+    </th>
+    <th>
+        <span>DELIVERY DATE</span>
+    </th>
+    <th>
+        <span>DELIVERY TIME</span>
+    </th>
+</thead> 
+
+
+<tbody>
+    <ng-container *ngFor='let row of cuslist'>
+    <tr *ngIf="enteredSearchText === '' || row.VBELN[0].includes(enteredSearchText)" (click)="detail(row)">
+        <td>
+            {{+row.KUNNR}}
+        </td> 
+        <td>
+            {{row.ERDAT}}
+        </td> 
+        <td>
+            {{+row.VBELN}}
+        </td> 
+        <td>
+            {{row.ERZET}}
+        </td>
+        <td>
+            {{row.ERDAT}}
+        </td>
+        <td>
+            {{row.VKORG}}
+        </td>
+        <td>
+            {{row.LFART}}
+        </td> 
+        <td>
+            {{row.LFDAT_V}}
+        </td>
+        <td>
+            {{row.LFUHR}}
+        </td>
+     
+    </tr>
+</ng-container>
+</tbody>
+</table>
+          
+<!-- Modal -->
+
+<div class="modal"  tabindex="-1" role="dialog" [ngStyle]="{'display':displayStyle}">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="tt">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title"></h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" (click)="closePopup()"></button>
+        </div>
+        <div class="modal-body">
+          <div>
+            <p class="pop-title">Customer ID : <span class="pop-value">{{document}}</span></p>
+            <p class="pop-title">Created Date : <span class="pop-value">{{document1}}</span></p>
+            <p class="pop-title">Delivery : <span class="pop-value">{{document2}}</span></p>
+            <p class="pop-title">Entry Time : <span class="pop-value">{{document3}}</span></p>
+            <p class="pop-title">Date of Record Creation : <span class="pop-value">{{document4}}</span></p>
+            <p class="pop-title">Shipping Point : <span class="pop-value">{{document5}}</span></p>
+            <p class="pop-title">Delivery Type : <span class="pop-value">{{document6}}</span></p>
+            <p class="pop-title">Delivery Date : <span class="pop-value">{{document7}}</span></p>
+            <p class="pop-title">Delivery Time : <span class="pop-value">{{document8}}</span></p>
+          </div>
+          
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" (click)="closePopup()">Close</button>
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>    
+  </div>
+  </div>
+  

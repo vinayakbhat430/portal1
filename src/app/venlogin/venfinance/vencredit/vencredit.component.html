@@ -1,0 +1,106 @@
+
+    <div class="image">
+        <div class="header">Credit Details</div>
+        <div class="input-div"><input class="input-search" placeholder="Search By Document Number" [(ngModel)]="enteredSearchText"></div>
+
+      <div class="container">
+          <table border="2px" [cellPadding]="1">
+    <thead>
+      <th>
+          <span>CUSTOMER </span>
+      </th>
+      <th>
+        <span>DOCUMENT NUMBER</span>
+    </th>
+    <th>
+        <span>MATERIAL NUMBER</span>
+    </th>
+    <th>
+        <span>PLANT</span>
+    </th>
+    <th>
+        <span>FISCAL YEAR</span>
+    </th>
+    <th>
+        <span>LINE ITEM</span>
+    </th>
+    <th>
+        <span>AMOUNT</span>
+    </th>
+    <th>
+        <span>Quantity</span>
+    </th>
+      
+  </thead> 
+
+
+  <tbody>
+    <ng-container *ngFor='let row of vencredit'>
+      <tr *ngIf="enteredSearchText === '' || row.BELNR[0].includes(enteredSearchText)" (click)="detail(row)">
+          <td>
+              {{row.KUNNR}}
+          </td>
+          <td>
+            {{row.BELNR}}
+        </td>
+        <td>
+            {{+row.MATNR}}
+        </td>
+        <td>
+            {{row.WERKS}}
+        </td>
+        <td>
+            {{row.GJAHR}}
+        </td>
+        <td>
+            {{row.BUZEI}}
+        </td>
+        <td><span class="amt">
+            {{+row.DMBTR}}
+            </span>
+        </td>
+        <td>
+          <span class="amt">
+            {{+row.MENGE}}
+            </span>
+        </td>
+       
+      </tr>
+    </ng-container>
+  </tbody>
+</table>
+          
+<!-- Modal -->
+
+<div class="modal"  tabindex="-1" role="dialog" [ngStyle]="{'display':displayStyle}">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="tt">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title"></h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" (click)="closePopup()"></button>
+        </div>
+        <div class="modal-body">
+          <div>
+            <p class="pop-title">Customer Number : <span class="pop-value">{{docnumber}}</span></p>
+            <p class="pop-title">Document Number : <span class="pop-value">{{docnumber1}}</span></p>
+            <p class="pop-title">Material Number : <span class="pop-value">{{docnumber2}}</span></p>
+            <p class="pop-title">Plant : <span class="pop-value">{{docnumber3}}</span></p>
+            <p class="pop-title">Fiscal Year : <span class="pop-value">{{docnumber4}}</span></p>
+            <p class="pop-title">Line Item : <span class="pop-value">{{docnumber5}}</span></p>
+            <p class="pop-title">Amount : <span class="pop-value">{{docnumber6}}</span></p>
+            <p class="pop-title">Quantity : <span class="pop-value">{{docnumber7}}</span></p>
+            <!-- <p class="pop-title">Tax Code : <span class="pop-value">{{docnumber8}}</span></p> -->
+          </div>
+          
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" (click)="closePopup()">Close</button>
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>    
+  </div>
+  </div>
+  

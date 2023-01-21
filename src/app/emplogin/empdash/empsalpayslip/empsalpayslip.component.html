@@ -1,0 +1,57 @@
+<div class="image">
+  <div class="header">Pay Slip Details</div>
+    <div class="container">
+        <table border="2px" [cellPadding]="1">
+          <thead>
+            <tr>
+              <td>SEQUENCENUMBER</td>
+              <td>START DATE</td>
+              <td>END DATE</td>
+              <!-- <td>FPPERIOD</td> -->
+              <td>PAYDATE</td>
+              <td>PAYTYPE</td>
+            <td>PAY SLIP</td>
+              
+              
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let row of emppay" (click)="detail(row)">
+              <td>{{row.SEQUENCENUMBER}}</td>
+              <td>{{row.FPBEGIN}}</td>
+              <td>{{row.FPEND}}</td>
+              <td>{{row.PAYDATE}}</td>
+              <td>{{row.PAYTYPE_TEXT}}</td>
+              <td><button routerLink="/pdfviewer" target="_blank" (click)="pdfsender(row)">Download</button></td>
+            </tr>
+          </tbody>
+        </table>
+<!-- Modal -->
+
+<div class="modal"  tabindex="-1" role="dialog" [ngStyle]="{'display':displayStyle}">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="tt">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title"></h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" (click)="closePopup()"></button>
+      </div>
+      <div class="modal-body">
+        <div>
+          <p class="pop-title">Sequence Number : <span class="pop-value">{{sno}}</span></p>
+          <p class="pop-title">Start Date : <span class="pop-value">{{sd}}</span></p>
+          <p class="pop-title">End Date : <span class="pop-value">{{ed}}</span></p>
+          <p class="pop-title">Pay Date : <span class="pop-value">{{pd}}</span></p>
+          <p class="pop-title">Pay type : <span class="pop-value">{{pt}}</span></p>
+        </div>
+        
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" (click)="closePopup()">Close</button>
+      </div>
+    </div>
+  </div>
+  </div>
+</div>    
+</div>
+</div>

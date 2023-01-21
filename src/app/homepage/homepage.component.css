@@ -1,0 +1,92 @@
+.container{
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+
+.image{
+    height:39.8em; background-size:cover;width: auto;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position:50% 50%;
+    background-size: 100% 100%;
+  }
+
+  /* .sect1 {  
+    height: 40em;  
+    width:96em;
+    content: url('/../assets/images/photo_2022-07-08_21-20-01.jpg');  
+    background-size: 100% 100%;  
+    background-size: cover;
+    background-position: 100% 100%;
+  } */
+
+  /* .bg {  
+    background-image:url('/../assets/images/photo_2022-07-08_21-20-01.jpg');
+    background-repeat:no-repeat;
+    background-size:cover;
+    bottom:0;
+    filter:contrast(.7) brightness(.7);  
+    left:0;
+    position:fixed;
+    right:0;
+    top:93px;
+  } */
+
+  h1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 18vh;
+    /* padding: 4px; */
+    width: 100%;
+    /* background-color: coral; */
+    font-size: 35px;
+    font-family:'Courier New', Courier, monospace;
+    /* font-family:Impact; */
+    color: black;
+    font-weight: bold;
+  }
+
+  .boy{
+    float:right;
+    margin-right: 10em;
+    /* margin-bottom: 10em; */
+  }
+
+  /* h3{
+    float:right;
+  } */
+  h3{
+    /*font-size:25px;*/
+    /*font-family: sens-serif;*/
+    font-size:30px;
+    /*font-family:courier;*/
+    font-family: monospace;
+    color:darkgreen;
+    justify-content: center;
+    margin-left:20em;
+    /*text-align:center;*/
+    /*margin-right:30px;*/
+  }
+
+  h4{
+    font-size:20px;
+    font-style: oblique;
+    /* background-color: orange; */
+    color: blueviolet;
+    /* text-align:center; */
+    /* align-items: center; */
+     float: left;
+     margin-left: 1em;
+     margin-top: 5em;
+     font-weight: bold;
+     font-size: 25px;
+  }
+  .pic{
+    float: left;
+    height:20em;
+    width:30em;
+    margin-top: 10px;
+    
+  }
+  

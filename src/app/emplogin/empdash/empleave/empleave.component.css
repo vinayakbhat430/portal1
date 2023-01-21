@@ -1,0 +1,44 @@
+
+  td {
+    /* border-bottom: 1px solid #ddd; */
+    width:450px;
+    height: 35px;
+    text-align: center;
+    /* background-color:rgb(202, 110, 202); */
+    /* font-family:cursive; */
+    color: darkblue;
+    font-weight: bold;
+    
+  }
+  table{
+    background-color: aliceblue;
+  }
+
+   thead tr td{
+    /* border-bottom: 1px solid #ddd; */
+    width:450px;
+    text-align: center;
+    background-color:rgb(224, 42, 42);
+    font-weight: bolder;
+    font-family:cursive;
+    color: black;
+    height: 60px;
+  }
+  .image{
+    height:39.8em; background-size:cover;width:auto ;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position:50% 50%;
+    background-size: 100% 100%;
+    background-color: #8771a8;
+  }
+  .header{
+    width: 100%;
+    font-size: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bolder;
+    padding: 32px 16px;
+    color: black;
+  }

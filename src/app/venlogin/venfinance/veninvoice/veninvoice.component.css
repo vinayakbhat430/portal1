@@ -1,0 +1,60 @@
+td {
+  /* border-bottom: 1px solid #ddd; */
+  width:450px;
+  text-align: center;
+  /* background-color:burlywood; */
+  /* font-family:cursive; */
+  height:25px;
+  color: blue;
+  font-weight: bolder;
+}
+
+ thead th{
+  /* border-bottom: 1px solid #ddd; */
+  width:450px;
+  text-align: center;
+  background-color:aqua;
+  font-family:cursive;
+  height:50px;
+}
+.image{
+  height: auto;
+  padding: 32px;
+}
+
+.bb{
+  border:none;
+  background:transparent;
+  font-family:cursive;
+  /* color:darkmagenta;
+  font-weight: bold; */
+}
+.tt thead tr td{
+  width: 100em;
+  align-items: center;
+  margin-left: -23em;
+  color: greenyellow;
+  background-color: darkgray;
+  /* margin-right: 25em; */
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.tt td{
+  color: aqua;
+  background-color: black;
+}
+
+
+.header{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  font-weight: bolder;
+  color: black;
+  width: 100%;
+  padding: 32px;
+}
+.image{
+  background-color: #fff6ef;
+}

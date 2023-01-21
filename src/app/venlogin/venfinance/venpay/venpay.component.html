@@ -1,0 +1,106 @@
+<div class="image">
+    <div class="header">Payments Aging</div>
+    <div class="input-div"><input class="input-search" placeholder="Search By Document Number" [(ngModel)]="enteredSearchText"></div>
+
+    <div class="container">
+        <table border="2px" [cellPadding]="1">
+    <thead>
+        <th>
+            <span>VENDOR</span>
+        </th>
+        <th>
+            <span>DOCUMENT NUMBER</span>
+        </th>
+        <th>
+            <span> FISC</span>
+        </th>
+        <th>
+            <span>ITEM NUMBER</span>
+        </th>
+        <th>
+            <span>DOCUMENT TYPE</span>
+        </th>
+        <th>
+            <span>AMOUNT</span>
+        </th>
+        <th>
+            <span>ENTRY DATE</span>
+        </th>
+        <th>
+            <span>CURRENCY</span>
+        </th>
+        <th>
+            <span>DUE DAYS</span>
+        </th>
+    </thead> 
+
+
+    <tbody>
+        <ng-container *ngFor='let row of venpay'>
+        <tr *ngIf="enteredSearchText === '' || row.DOC_NO[0].includes(enteredSearchText)" (click)="detail(row)">
+            <td>
+                {{row.VENDOR}}
+            </td>
+            <td>
+                {{row.DOC_NO}}
+            </td> 
+            <td>
+                {{row.FISC_YEAR}}
+            </td> 
+            <td>
+                {{row.ITEM_NUM}}
+            </td> 
+            <td>
+                {{row.DOC_TYPE}}
+            </td> 
+            <td>
+                <span class="amt">{{row.AMOUNT}}</span>
+            </td> 
+            <td>
+                {{row.ENTRY_DATE}}
+            </td>
+            <td>
+                {{row.CURRENCY}}
+            </td>
+            <td>
+                {{row.DUEDAYS}}
+            </td>
+         
+        </tr>
+        </ng-container>
+    </tbody> 
+    </table>
+<!-- Modal -->
+
+<div class="modal"  tabindex="-1" role="dialog" [ngStyle]="{'display':displayStyle}">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="tt">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title"></h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" (click)="closePopup()"></button>
+        </div>
+        <div class="modal-body">
+            <div>
+                <p class="pop-title">Vendor : <span class="pop-value">{{docnumber}}</span></p>
+                <p class="pop-title">Document Number : <span class="pop-value">{{docnumber1}}</span></p>
+                <p class="pop-title">Fiscal Year : <span class="pop-value">{{docnumber2}}</span></p>
+                <p class="pop-title">Item Number : <span class="pop-value">{{docnumber3}}</span></p>
+                <p class="pop-title">Document Type : <span class="pop-value">{{docnumber4}}</span></p>
+                <p class="pop-title">Amount : <span class="pop-value">{{docnumber5}}</span></p>
+                <p class="pop-title">Entry Date : <span class="pop-value">{{docnumber6}}</span></p>
+                <p class="pop-title">Currency : <span class="pop-value">{{docnumber7}}</span></p>
+                <p class="pop-title">Tax Code : <span class="pop-value">{{docnumber8}}</span></p>
+              </div>
+          
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" (click)="closePopup()">Close</button>
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>    
+  </div>
+  </div>
+  

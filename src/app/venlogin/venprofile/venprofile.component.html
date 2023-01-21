@@ -1,0 +1,242 @@
+<div>
+    <div class="image">
+        <div class="human">
+          <img
+            src="assets\images\e7e2fc5598942999c07a92222a.gif"
+            height="300em"
+            width="300em"
+            class="man"
+          />
+        </div>
+        <div class="container" *ngFor="let row of venprofile">
+          <h1 class="hello">
+            Hello! <span class="cust-name"><span class="cust-name">{{row.FORMOFADDR}} </span>{{ row.NAME }}</span>
+          </h1>
+      
+          <div>
+            <div>
+              <h2>Account Details 👇</h2>
+            <div class="tx">
+              VENDOR: <span class="data">{{ row.VENDOR }}</span>
+            </div>
+            <div class="tx">
+              Phone Number: <span class="data">{{ row.TELEPHONE }}</span>
+            </div>
+            </div>
+      
+            <div class="">
+              <h3>Address :</h3>
+              <div class="tx">
+                Street : <span class="data">{{ row.STREET }}</span>
+              </div>
+              <div class="tx">
+                City : <span class="data">{{ row.CITY }}</span>
+              </div>
+              <div class="tx">
+                Country : <span class="data">{{ row.COUNTRY }}</span>
+              </div>
+              <div class="tx">
+                Pincode : <span class="data">{{ row.POSTL_CODE }}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+</div>
+<!-- <div class="image">
+    <div class="container">
+        <h2>GENERAL DETAIL:</h2>
+        <table border="2px" [cellPadding]="1">
+    
+             <thead>
+      
+                <th>
+      
+                    <span>NAME</span>
+      
+                </th>
+      
+                <th>
+      
+                    <span>CITY</span>
+      
+                </th>
+      
+                <th>
+      
+                    <span>STREET</span>
+      
+                </th>
+      
+                <th>
+      
+                    <span>POSTL_CODE</span>
+      
+                </th>
+      
+                <th>
+      
+                    <span>TELEPHONE NO</span>
+      
+                </th>  
+            </thead>
+            
+            <tbody>
+    
+                <tr>
+      
+                    <td>
+      
+                        {{name}}
+      
+                    </td>
+      
+                    <td>
+      
+                        {{city}}
+      
+                    </td>
+      
+                    <td>
+      
+                        {{street}}
+      
+                    </td>
+      
+                    <td>
+      
+                        {{postl}}
+      
+                    </td>
+      
+                    <td>
+      
+                        {{telephone}}
+      
+                    </td>
+      
+                </tr>
+      
+            </tbody>
+      
+            </table>
+            <h2>COMPANY DETAIL:</h2>
+            <table border="2px" [cellPadding]="1">
+      
+                <thead>
+         
+                   <th>
+         
+                       <span>NAME</span>
+         
+                   </th>
+         
+                   <th>
+         
+                       <span>COMPANY CODE</span>
+         
+                   </th>
+                   <th>
+         
+                    <span>PAYMENT METHOD</span>
+      
+                </th>
+         
+                   
+               </thead>
+               
+               <tbody>
+       
+                   <tr>
+         
+                       <td>
+         
+                           {{name}}
+         
+                       </td>
+         
+                       <td>
+         
+                           {{comp}}
+         
+                       </td>
+
+                       <td> {{paymt}}</td>
+         
+                       
+         
+                   </tr>
+         
+               </tbody>
+         
+               </table>
+               <h2>BANK DETAIL:</h2>
+               <table border="2px" [cellPadding]="1">
+      
+                <thead>
+         
+                   <th>
+         
+                       <span>NAME</span>
+         
+                   </th>
+         
+                   <th>
+         
+                       <span>BANK ACCOUNT</span>
+         
+                   </th>
+         
+                   <th>
+         
+                       <span>BANK COUNTRY</span>
+         
+                   </th>
+         
+                   <th>
+         
+                       <span>BANK KEY</span>
+         
+                   </th>
+         
+                   
+               </thead>
+               
+               <tbody>
+       
+                   <tr>
+         
+                       <td>
+         
+                           {{ven}}
+         
+                       </td>
+         
+                       <td>
+         
+                           {{bacc}}
+         
+                       </td>
+         
+                       <td>
+         
+                           {{bank}}
+         
+                       </td>
+         
+                       <td>
+         
+                           {{bkey}}
+         
+                       </td>
+         
+                   </tr>
+         
+               </tbody>
+         
+               </table>
+    </div>
+    <img src="assets/images/e7e2fc5598942999c07a92222a.gif" height="300em" width="300em" class="man">
+
+</div> -->

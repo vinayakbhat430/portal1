@@ -1,0 +1,94 @@
+<div class="image">
+  <div class="header">Sales List</div>
+  <div class="input-div"><input class="input-search" placeholder="Search By Sales Document Number" [(ngModel)]="enteredSearchText"></div>
+<div class="container">
+    <table border="2px" [cellPadding]="1">
+<thead>
+          
+  <th>
+      <span>SALES DOCUMENT NUMBER</span>
+  </th>
+  <th>
+      <span>DOCUMENT TYPE</span>
+  </th>
+  <th>
+    <span>MATERIAL</span>
+</th>
+  <th>
+      <span>REQUIRED QUANTITY</span>
+  </th>
+  <th>
+      <span>PURCHASE NUMBER</span>
+  </th>
+  <th>
+      <span>DELIVERY QUANTITY</span>
+  </th>
+  <th>
+      <span>NET PRICE</span>
+  </th> 
+</thead> 
+
+
+<tbody>
+  <ng-container *ngFor='let row of cussale' >
+  <tr *ngIf="enteredSearchText === '' || row.SD_DOC[0].includes(enteredSearchText)" (click)="detail(row)">
+      <td>
+          {{+row.SD_DOC}}
+      </td> 
+      <td>
+        
+          {{row.DOC_TYPE}}
+      </td> 
+      <td>
+          {{+row.MATERIAL}}
+      </td>
+      <td>
+          <span class="amt">{{row.REQ_QTY}}</span>
+      </td> 
+      <td>
+        {{row.PURCH_NO}}
+    </td>
+      <td>
+         <span class="amt"> {{row.DLV_QTY}}</span>
+      </td> 
+       
+      <td>
+          <span>{{row.NET_PRICE}}</span>
+      </td> 
+   
+  </tr>
+</ng-container>
+</tbody>
+
+     </table>     
+<!-- Modal -->
+
+<div class="modal"  tabindex="-1" role="dialog" [ngStyle]="{'display':displayStyle}">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="tt">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title"></h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" (click)="closePopup()"></button>
+      </div>
+      <div class="modal-body">
+        <div>
+          <p class="pop-title">Sales Document Number : <span class="pop-value">{{document}}</span></p>
+          <p class="pop-title">Document Type : <span class="pop-value">{{document1}}</span></p>
+          <p class="pop-title">Material : <span class="pop-value">{{document2}}</span></p>
+          <p class="pop-title">Required Quantity : <span class="pop-value">{{document3}}</span></p>
+          <p class="pop-title">Purchase Number : <span class="pop-value">{{document4}}</span></p>
+          <p class="pop-title">Delivery Quantity : <span class="pop-value">{{document5}}</span></p>
+          <p class="pop-title">Net Price : <span class="pop-value">{{document6}}</span></p>
+        </div>
+        
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" (click)="closePopup()">Close</button>
+      </div>
+    </div>
+  </div>
+  </div>
+</div>    
+</div>
+</div>

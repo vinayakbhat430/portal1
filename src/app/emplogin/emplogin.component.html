@@ -1,0 +1,30 @@
+
+<div class="image">
+    <div class="login-box">
+      <h2>Employee Login</h2>
+      <form class="log">
+        <div class="input">
+          <label>Username </label>
+          <input type="text" name="user" [(ngModel)]="user" class="ip-box" />
+        </div>
+        <div class="input">
+          <label>Password </label>
+          <input
+            type="password"
+            name="password"
+            [(ngModel)]="password"
+            class="ip-box"
+          />
+        </div>
+        <div class="input">
+          <input
+            class="button"
+            type="submit"
+            value="Login"
+            (click)="LoginUser2('empdash')"
+          />
+        </div>
+      </form>
+    </div>
+  </div>
+  

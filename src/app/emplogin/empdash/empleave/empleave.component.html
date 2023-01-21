@@ -1,0 +1,63 @@
+<div class="image">
+  <div class="header"> Leave Details</div>
+    <div class="container">
+        <table border="2px" [cellPadding]="1">
+          <thead>
+            <tr>
+              <td>EMPLOYEE ID</td>
+              <td>LEAVE CODE</td>
+              <td>TYPE OF LEAVE</td>
+              <td>NO OF DAYS ABSENT</td>
+              <td>NO OF HOURS ABSENT</td>
+              <td>FROM</td>
+              <td>TO</td>
+              
+              
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let row of empleave" (click)="detail(row)">
+              <td>{{row.EMPLOYEENO}}</td>
+              <td>{{row.ABSENCETYPE}}</td>
+              <td>{{row.NAMEOFABSENCETYPE}}</td>
+              <td>{{row.ABSENCEDAYS}}</td>
+              <td>{{row.ABSENCEHOURS}}</td>
+              <td>{{row.VALIDBEGIN}}</td>
+              <td>{{row.VALIDEND}}</td>
+              
+            </tr>
+          </tbody>
+        </table>
+
+
+        <!-- Modal -->
+
+<div class="modal"  tabindex="-1" role="dialog" [ngStyle]="{'display':displayStyle}">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="tt">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title"></h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" (click)="closePopup()"></button>
+      </div>
+      <div class="modal-body">
+        <div>
+          <p class="pop-title">Employee Number : <span class="pop-value">{{eno}}</span></p>
+          <p class="pop-title">Leave Code : <span class="pop-value">{{lco}}</span></p>
+          <p class="pop-title">Type of Leave : <span class="pop-value">{{tol}}</span></p>
+          <p class="pop-title">No of Days Absent : <span class="pop-value">{{noa}}</span></p>
+          <p class="pop-title">No of Hours Absent : <span class="pop-value">{{nha}}</span></p>
+          <p class="pop-title">From : <span class="pop-value">{{fr}}</span></p>
+          <p class="pop-title">To : <span class="pop-value">{{to}}</span></p>
+        </div>
+        
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" (click)="closePopup()">Close</button>
+      </div>
+    </div>
+  </div>
+  </div>
+</div>    
+</div>
+</div>
